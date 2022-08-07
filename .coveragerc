@@ -2,4 +2,3 @@
 omit =
     */__init__.py
     tests/*
-    src/adapters/orm.py
