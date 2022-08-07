@@ -1,9 +1,19 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
+from typing import Optional
+from config import get_settings
+
+settings = get_settings()
 
 
-class UserBase(BaseModel):
-    email: EmailStr
+class TokenCreate(BaseModel):
+    payload: dict
+    expireTime: Optional[int] = settings.default_expiration_time
+    expire: Optional[bool] = True
 
-class UserCreate(UserBase):
-    password: str
-    password2: str
+
+class Token(BaseModel):
+    token: str
+
+
+class VerifiedToken(BaseModel):
+    payload: dict
