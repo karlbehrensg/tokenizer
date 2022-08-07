@@ -1,7 +1,7 @@
 import pytest
 from pydantic.error_wrappers import ValidationError
 
-from src.domain.schemas import TokenCreate, TokenResponse
+from src.domain.schemas import TokenCreate
 from config import get_settings
 
 settings = get_settings()

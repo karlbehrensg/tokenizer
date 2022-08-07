@@ -11,5 +11,9 @@ class TokenCreate(BaseModel):
     expire: Optional[bool] = True
 
 
-class TokenResponse(BaseModel):
+class Token(BaseModel):
     token: str
+
+
+class VerifiedToken(BaseModel):
+    payload: dict
